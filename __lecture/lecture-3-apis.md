@@ -50,7 +50,7 @@ const App = () => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('https://tdbank.com/balance?secretKey=abcd1234').then(setData);
+    fetch("https://tdbank.com/balance?secretKey=abcd1234").then(setData);
   }, []);
 
   return `Your bank balance is ${data.balance}`;
@@ -58,6 +58,7 @@ const App = () => {
 ```
 
 Is there something wrong here?
+key is visible.
 
 ---
 
@@ -76,6 +77,7 @@ Here's how we typically get around this problem:
 - The server asks the 3rd-party API for an _access token_
 - The server gives the client the token
 - The client uses that token.
+- a token is a temporary key/secret
 
 ---
 
